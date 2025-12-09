@@ -65,7 +65,7 @@ built with:
 ### 1️⃣ Clone the Repository
 
 ``` bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
+git clone https://github.com/AlexandreJustinRepia/DENR-ICT-INVENTORY
 cd YOUR_REPO
 ```
 
