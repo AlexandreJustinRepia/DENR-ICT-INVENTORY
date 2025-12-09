@@ -1,59 +1,150 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# ICT Inventory & SRF Ticketing System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A full-stack ICT inventory and service request (SRF) management system
+built with:
 
-## About Laravel
+-   **Laravel** (Backend API)
+-   **React + Vite** (Frontend)
+-   **MySQL** (Database)
+-   **Laravel Breeze** (Authentication scaffolding)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+------------------------------------------------------------------------
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🚀 Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 🖥 ICT Inventory Management
 
-## Learning Laravel
+-   Track all ICT equipment (desktop, laptop, printers, networking,
+    etc.)
+-   Store complete hardware specifications:
+    -   Processor\
+    -   RAM\
+    -   GPU\
+    -   Storage\
+    -   Office productivity software\
+    -   OS version\
+    -   Endpoint protection\
+    -   Serial number\
+    -   Property number\
+    -   Year acquired\
+    -   Shelf life\
+    -   Remarks\
+-   Tracks:
+    -   **Accountable Person**
+    -   **Actual User**
+    -   **Employment Status**
+    -   **Sex**
+    -   **Nature of Work**
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### 🎫 Service Request Form (SRF)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+-   Users submit tickets for:
+    -   Troubleshooting\
+    -   Repairs\
+    -   Software installs\
+    -   Hardware issues\
+-   Admins & technicians can:
+    -   Review requests\
+    -   Approve/Reject\
+    -   Assign technician\
+    -   Update ticket status
 
-## Laravel Sponsors
+### 🏷 Sticker Printing
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+-   Auto-generate equipment sticker that includes:
+    -   Property code\
+    -   Acquired date\
+    -   Barcode / QR code\
+    -   Cost\
+    -   Quick-scan to view full equipment details
 
-### Premium Partners
+------------------------------------------------------------------------
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## 📦 Installation Guide
 
-## Contributing
+### 1️⃣ Clone the Repository
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+``` bash
+git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
+cd YOUR_REPO
+```
 
-## Code of Conduct
+### 2️⃣ Install Backend Dependencies
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+``` bash
+composer install
+```
 
-## Security Vulnerabilities
+### 3️⃣ Install Frontend Dependencies
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+``` bash
+npm install
+```
 
-## License
+### 4️⃣ Setup Environment File
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+``` bash
+cp .env.example .env
+php artisan key:generate
+```
+
+Update `.env` database configuration.
+
+### 5️⃣ Run Migrations
+
+``` bash
+php artisan migrate
+```
+
+### 6️⃣ Run Development Servers
+
+**Laravel API**
+
+``` bash
+php artisan serve
+```
+
+**React Frontend**
+
+``` bash
+npm run dev
+```
+
+------------------------------------------------------------------------
+
+## 🗃 Database Overview
+
+Main tables created in this system:
+
+  Table                 Description
+  --------------------- -------------------------------------------------------
+  `users`               Authenticated users (admins & employees)
+  `employees`           Employee profiles, accountable persons & actual users
+  `equipment_types`     Category list for equipment
+  `equipments`          Main inventory table
+  `software_installs`   Software installed per equipment
+  `tickets`             SRF ticket system
+
+------------------------------------------------------------------------
+
+## 🛠 Technologies Used
+
+-   Laravel 11\
+-   React 18\
+-   Vite\
+-   MySQL 8\
+-   Laravel Breeze\
+-   TailwindCSS
+
+------------------------------------------------------------------------
+
+## 📄 License
+
+This project is for internal use only unless approved for distribution.
+
+------------------------------------------------------------------------
+
+## 👨‍💻 Developer
+
+**Your Name**\
+ICT Inventory & SRF System Developer
