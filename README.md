@@ -146,5 +146,5 @@ This project is for internal use only unless approved for distribution.
 
 ## 👨‍💻 Developer
 
-**Your Name**\
+**Alexandre Justin Repia**\
 ICT Inventory & SRF System Developer
